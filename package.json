@@ -1,0 +1,21 @@
+{
+  "name": "osrs-community-discord-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for an Old School Runescape community with verification, LFG bossing, and community management features.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "deploy-commands": "node src/register-commands.js",
+    "checkpoint:create": "powershell -ExecutionPolicy Bypass -File scripts/checkpoint-create.ps1",
+    "checkpoint:list": "powershell -ExecutionPolicy Bypass -File scripts/checkpoint-list.ps1",
+    "checkpoint:restore": "powershell -ExecutionPolicy Bypass -File scripts/checkpoint-restore.ps1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.5",
+    "fs-extra": "^11.2.0",
+    "luxon": "^3.7.2"
+  }
+}
