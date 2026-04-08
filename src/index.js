@@ -43,6 +43,11 @@ if (!Number.isNaN(dashPort) && dashPort > 0) {
     port: dashPort,
     host: process.env.DASHBOARD_HOST || undefined,
     clientId: process.env.CLIENT_ID || null,
+    oauthClientId: process.env.DASHBOARD_DISCORD_CLIENT_ID || process.env.CLIENT_ID || null,
+    oauthClientSecret: process.env.DASHBOARD_DISCORD_CLIENT_SECRET || null,
+    oauthRedirectUri: process.env.DASHBOARD_DISCORD_REDIRECT_URI || null,
+    ownerDiscordId: process.env.DASHBOARD_OWNER_DISCORD_ID || null,
+    sessionSecret: process.env.DASHBOARD_SESSION_SECRET || null,
     getStatus: () => ({
       botReady: client.isReady(),
       tag: client.user ? client.user.tag : null

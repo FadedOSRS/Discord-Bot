@@ -74,6 +74,22 @@ The bot serves a small **staff dashboard** page from the same process (no extra 
 - Set **`DASHBOARD_PORT=0`** in `.env` to turn it off.
 - Optional: **`DASHBOARD_HOST=0.0.0.0`** to listen on all interfaces (use with a reverse proxy / firewall in production).
 - **`GET /health`** returns JSON `{ ok, botReady, tag }` (for uptime checks).
+- Dashboard UI supports **Discord OAuth login** and can be locked to a single Discord user ID (owner-only).
+
+Configure owner-only OAuth in `.env`:
+
+```env
+DASHBOARD_DISCORD_CLIENT_ID=your_discord_app_client_id
+DASHBOARD_DISCORD_CLIENT_SECRET=your_discord_app_client_secret
+DASHBOARD_DISCORD_REDIRECT_URI=https://your-dashboard-host/auth/discord/callback
+DASHBOARD_OWNER_DISCORD_ID=your_discord_user_id
+DASHBOARD_SESSION_SECRET=long_random_secret
+```
+
+Notes:
+- In Discord Developer Portal, add your callback URL to **OAuth2 → Redirects**.
+- The callback path must match exactly: **`/auth/discord/callback`**.
+- If these vars are not set, the dashboard still runs in basic mode without OAuth lock.
 
 To show a **“Bot dashboard”** link in the Terpinheimer site navbar, set on the **website** server:
 

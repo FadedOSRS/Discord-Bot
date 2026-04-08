@@ -22,6 +22,7 @@ function buildMemberCommandsEmbed(prefix) {
           '`/gear` — Recommended gear from wiki strategy pages (styles: melee / range / magic / budget)\n' +
           '`/events` — Modals: name/start/end/description, then podium (1st–3rd) & pets\n' +
           '`/lfg` — Bossing group (times: add `8pm CST` or use `timezone` for `<t:…>` local display)\n' +
+          '`/history` — Coffer donation history + total for a user\n' +
           '`/price` / `/ge` — Grand Exchange item price\n' +
           '`/dry` — Dry-streak odds (e.g. rate `1/512`, your `kc`)',
         inline: false
